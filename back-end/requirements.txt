@@ -1,0 +1,44 @@
+addict==2.4.0
+asgiref==3.5.1
+certifi==2021.10.8
+cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1636046173594/work
+charset-normalizer==2.0.12
+click==7.1.2
+colorama==0.4.4
+cycler==0.11.0
+Cython==0.29.28
+Django==4.0.4
+fonttools==4.33.3
+idna==3.3
+importlib-metadata==4.11.3
+kiwisolver==1.4.2
+Markdown==3.3.7
+matplotlib==3.5.2
+mmcv-full==1.5.0
+mmdet==2.24.1
+model-index==0.1.11
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1651020584890/work
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+opencv-python==4.5.5.64
+openmim==0.1.5
+ordered-set==4.1.0
+packaging==21.3
+pandas==1.4.2
+Pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1636559202918/work
+pycocotools==2.0.4
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
+pyparsing==3.0.9
+python-dateutil==2.8.2
+pytz==2022.1
+PyYAML==6.0
+requests==2.27.1
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+sqlparse==0.4.2
+tabulate==0.8.9
+terminaltables==3.1.10
+torch @ file:///Users/runner/miniforge3/conda-bld/pytorch-recipe_1651023559589/work
+torchvision==0.2.2
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1650370875435/work
+urllib3==1.26.9
+yapf==0.32.0
+zipp==3.8.0
