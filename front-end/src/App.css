@@ -29,3 +29,15 @@ header {
     font-size: 3vh !important;
     margin-right: 1.5vh;
 }
+
+/* Footer css */
+footer {
+    width: 100%;
+    height: 7vh;
+    background: var(--footer-color);
+    text-align: center;
+    color: floralwhite;
+    font-family: "Hiragino Maru Gothic Pro", cursive;
+    font-size: 1.7vh;
+    line-height: 7vh;
+}
