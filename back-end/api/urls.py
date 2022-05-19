@@ -7,5 +7,5 @@ app_name = "api"
 
 # url 패턴
 urlpatterns = [
-    path("", upload, name="upload")
+    path("upload", upload, name="upload")
 ]
