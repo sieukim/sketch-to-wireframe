@@ -1,5 +1,6 @@
 import {Box, Button} from "@mui/material";
 import React, {ChangeEvent, useEffect, useState} from "react";
+import {upload} from "../modules/api";
 
 export function Upload() {
     // image file
@@ -8,13 +9,16 @@ export function Upload() {
     const [url, setUrl] = useState<string | undefined>(undefined);
 
     // input onChange handler
-    const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    const onChangeInput = async (event: ChangeEvent<HTMLInputElement>) => {
         const files = event.currentTarget.files;
 
         if (files && files[0]) {
             setFile(files[0]);
+            const result = await upload(files[0]);
+            console.log(result);
         }
     }
+
     // create the preview
     useEffect(() => {
         if (!file) {
