@@ -6,7 +6,9 @@ export function Upload() {
     // image file
     const [file, setFile] = useState<File | undefined>(undefined);
     // image url
-    const [url, setUrl] = useState<string | undefined>(undefined);
+    const [url, setUrl] = useState<string>("/images/default.png");
+    // image class
+    const [className, setClassName] = useState<string>('default');
 
     // input onChange handler
     const onChangeInput = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -14,6 +16,7 @@ export function Upload() {
 
         if (files && files[0]) {
             setFile(files[0]);
+            setClassName('');
             const result = await upload(files[0]);
             console.log(result);
         }
@@ -22,12 +25,14 @@ export function Upload() {
     // create the preview
     useEffect(() => {
         if (!file) {
-            setUrl(undefined);
+            setUrl("/images/default.png");
+            setClassName('default');
             return;
         }
 
         const objectURL = URL.createObjectURL(file!);
         setUrl(objectURL);
+        setClassName('');
 
         return () => URL.revokeObjectURL(objectURL);
     }, [file]);
@@ -35,7 +40,7 @@ export function Upload() {
     return (
         <div className="upload">
             <Box className="upload-box">
-                <img alt="sketch" src={url}/>
+                <img alt="sketch" src={url} className={className}/>
             </Box>
             <Button
                 variant="outlined"
