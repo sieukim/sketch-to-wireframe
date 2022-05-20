@@ -3,6 +3,7 @@
     --header-color: #90caf9;
     --footer-color: #90caf9;
     --button-color: #90caf9;
+    --loading-color: grey;
     --border-color: #90caf9;
 }
 
@@ -44,8 +45,6 @@ footer {
     font-family: "Hiragino Maru Gothic Pro", cursive;
     font-size: 1.7vh;
     line-height: 7vh;
-    position: fixed;
-    bottom: 0;
 }
 
 /* Container css */
@@ -54,6 +53,7 @@ footer {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    min-height: 76vh;
     background: var(--bg-color);
 }
 
@@ -61,19 +61,19 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50vw;
+    justify-content: center;
+    width: 60vw;
+    height: 90vw;
 }
 
 .upload-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50vw;
-    height: 50vw;
+    width: 60vw;
+    height: 60vw;
     border: 1px dashed var(--border-color);
-    margin-bottom: 3vh;
 }
-
 
 .upload img {
     max-width: 100%;
@@ -86,9 +86,55 @@ img.default {
 }
 
 .upload label {
-    width: 50vw;
+    width: 60vw;
     color: var(--button-color) !important;
     font-family: "Hiragino Maru Gothic Pro", cursive !important;
     border-color: var(--button-color) !important;
-    margin-bottom: 1vh;
+    margin: 3vh 0 3vh 0;
+}
+
+.result {
+    width: 60vw;
+    height: 90vw;
+}
+
+.result svg {
+    color: white;
+}
+
+/* web */
+@media only screen and (min-width: 1024px) {
+    /* web css */
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .upload {
+        width: 30vw;
+        height: 40vw;
+    }
+
+    .upload-box {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    img.default {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .upload label {
+        width: 30vw;
+    }
+
+    .result {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30vw;
+        height: 40vw;
+    }
 }
