@@ -1,31 +1,43 @@
 import json
 
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .detector import Detector
 from .models import Document
 
 # 물체 검출 모델 객체
-dt = Detector(config="./config.py", checkpoint="./epoch_30.pth")
+faster_rcnn = Detector(config="./model/faster_rcnn/config.py", checkpoint="./model/faster_rcnn/checkpoint.pth")
+tood = Detector(config="./model/tood/config.py", checkpoint="./model/tood/checkpoint.pth")
+yolof = Detector(config="./model/yolof/config.py", checkpoint="./model/yolof/checkpoint.pth")
+yolox = Detector(config="./model/yolox/config.py", checkpoint="./model/yolox/checkpoint.pth")
+
+
+# 물체 검출 결과 반환 함수
+def get_result(model, fname):
+    # 물체 검출 결과
+    result = model.detect(fname=fname)
+    # 배열 -> 리스트
+    return [value.tolist() for value in result]
 
 
 # 물체 검출 함수
 def detect(fname):
-    global dt
+    global faster_rcnn, tood, yolof, yolox
 
-    # 물체 검출 결과
-    result = dt.detect(fname=fname)
+    # 각 모델 물체 검출 결과
+    result = {
+        "faster_rcnn": get_result(faster_rcnn, fname),
+        "tood": get_result(tood, fname),
+        "yolof": get_result(yolof, fname),
+        "yolox": get_result(yolox, fname),
+    }
 
-    # 배열 -> 리스트
-    result_list = [value.tolist() for value in result]
-
-    # 리스트 -> json
-    result_json = json.dumps(result_list)
-
-    return result_json
-
+    # 딕셔너리 -> 문자열
+    return json.dumps(result)
 
 # 파일 업로드 함수
+@csrf_exempt
 def upload(request):
     # POST
     if request.method == "POST":
