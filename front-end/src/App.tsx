@@ -4,10 +4,11 @@ import {Header} from "./components/Header";
 import {Footer} from "./components/Footer";
 import {Upload} from "./components/Upload";
 import {Result} from "./components/Result";
+import {DetectionResult} from "./types";
 
 function App() {
   // detection result
-  const [result, setResult] = useState<JSON | undefined>(undefined);
+  const [result, setResult] = useState<DetectionResult | undefined>(undefined);
 
   return (<>
     <Header/>

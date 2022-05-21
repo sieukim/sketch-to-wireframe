@@ -1,10 +1,8 @@
 import {Box, Button} from "@mui/material";
 import React, {ChangeEvent, useEffect, useState} from "react";
 import {upload} from "../modules/api";
-
-type UploadProps = {
-    setResult: Function;
-}
+import {getImageFileInfo} from "../utils/getImageFileInfo";
+import {UploadProps} from "../types";
 
 export function Upload({setResult}: UploadProps) {
     // image file
@@ -25,8 +23,9 @@ export function Upload({setResult}: UploadProps) {
             setFile(files[0]);
             setClassName('');
             setLoading(true);
+            const {width, height} = await getImageFileInfo(files[0]);
             const result = await upload(files[0]);
-            setResult(result);
+            setResult({models: result.data, imageWidth: width, imageHeight: height});
             setLoading(false);
         }
     }
