@@ -11,6 +11,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import {IconButton} from "@mui/material";
 import {Download} from "@mui/icons-material";
 import {StepperProps} from "../types";
+import * as htmlToImage from "html-to-image";
 
 // https://mui.com/material-ui/react-stepper/#main-content
 
@@ -27,6 +28,22 @@ export function Stepper({size, steps}: StepperProps) {
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
+
+    // download button onclick handler
+    const onClickButton = () => {
+        const node = document.getElementById('wireframe');
+
+        if (node) {
+            htmlToImage
+                .toPng(node)
+                .then(url => {
+                    const element = document.createElement('a');
+                    element.download = 'wireframe.png';
+                    element.href = url;
+                    element.click();
+                });
+        }
+    }
 
     return (
         <Box sx={{width: size, flexGrow: 1, border: `1px solid ${themeColor}`}}>
@@ -45,7 +62,11 @@ export function Stepper({size, steps}: StepperProps) {
                 }}
             >
                 <Typography>{steps[activeStep].label}</Typography>
-                <IconButton sx={{marginLeft: 'auto'}}>
+                <IconButton
+                    sx={{marginLeft: 'auto'}}
+                    component="button"
+                    onClick={onClickButton}
+                >
                     <Download/>
                 </IconButton>
             </Paper>

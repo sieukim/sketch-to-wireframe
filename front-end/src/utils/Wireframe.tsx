@@ -13,6 +13,7 @@ export function Wireframe({data, size, imageWidth, imageHeight}: WireframeProps)
                 justifyContent: 'center',
                 alignItems: 'center',
             }}
+            id="wireframe"
         >
             <div
                 style={{
