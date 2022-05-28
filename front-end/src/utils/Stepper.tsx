@@ -35,7 +35,7 @@ export function Stepper({size, steps}: StepperProps) {
 
         if (node) {
             htmlToImage
-                .toPng(node)
+                .toPng(node, {backgroundColor: 'white'})
                 .then(url => {
                     const element = document.createElement('a');
                     element.download = 'wireframe.png';
@@ -58,7 +58,6 @@ export function Stepper({size, steps}: StepperProps) {
                     bgcolor: themeColor,
                     color: 'white',
                     fontWeight: 'bold',
-
                 }}
             >
                 <Typography>{steps[activeStep].label}</Typography>
@@ -70,7 +69,12 @@ export function Stepper({size, steps}: StepperProps) {
                     <Download/>
                 </IconButton>
             </Paper>
-            <Box sx={{width: size, height: size, borderBottom: `1px solid ${themeColor}`}}>
+            <Box sx={{
+                width: size,
+                height: size,
+                borderBottom: `1px solid ${themeColor}`
+                }}
+            >
                 {steps[activeStep].description}
             </Box>
             <MobileStepper
