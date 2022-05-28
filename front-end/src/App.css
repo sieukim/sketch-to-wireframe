@@ -90,7 +90,7 @@ img.default {
     color: var(--button-color) !important;
     font-family: "Hiragino Maru Gothic Pro", cursive !important;
     border-color: var(--button-color) !important;
-    margin: 3vh 0 3vh 0;
+    margin-top: 1vw;
 }
 
 .result {
@@ -108,33 +108,35 @@ img.default {
     .container {
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     .upload {
-        width: 30vw;
-        height: 40vw;
+        width: 20vw;
+        height: 30vw;
+        margin-right: 5vw;
     }
 
     .upload-box {
-        width: 30vw;
-        height: 30vw;
+        width: 20vw;
+        height: 20vw;
     }
 
     img.default {
-        width: 10vw;
-        height: 10vw;
+        width: 5vw;
+        height: 5vw;
     }
 
     .upload label {
-        width: 30vw;
+        width: 20vw;
     }
 
     .result {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30vw;
-        height: 40vw;
+        width: 20vw;
+        height: 30vw;
+        margin-left: 5vw;
     }
 }

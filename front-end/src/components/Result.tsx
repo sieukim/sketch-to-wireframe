@@ -29,7 +29,7 @@ export function Result({result}: ResultProps) {
     // current screen size
     const screenSize = window.innerWidth;
     // Stepper's size
-    const stepperSize = screenSize >= 1024 ? '30vw' : '60vw';
+    const stepperSize = screenSize >= 1024 ? '20vw' : '60vw';
     // Stepper's step
     const [steps, setSteps] = useState(defaultSteps);
 
