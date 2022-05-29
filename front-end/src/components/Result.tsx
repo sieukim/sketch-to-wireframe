@@ -48,7 +48,7 @@ export function Result({result}: ResultProps) {
                 .filter(value => value.data.length > 0)
                 .map(({data: [xMin, yMin, xMax, yMax, score], type}) => ({
                     left: xMin / imageWidth * 100,
-                    top: yMin / imageWidth * 100,
+                    top: yMin / imageHeight * 100,
                     width: (xMax - xMin) / imageWidth * 100,
                     height: (yMax - yMin) / imageHeight * 100,
                     type,
