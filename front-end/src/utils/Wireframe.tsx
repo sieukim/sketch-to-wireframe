@@ -1,4 +1,4 @@
-import {getComponent} from "./getComponent";
+import {GetComponent} from "./GetComponent";
 import {WireframeProps} from "../types";
 
 
@@ -23,7 +23,7 @@ export function Wireframe({data, size, imageWidth, imageHeight}: WireframeProps)
                     boxSizing: 'border-box',
                 }}
             >
-                {data.map(value => getComponent(value, value.type, `key${value.width}`))}
+                {data.map(value => GetComponent(value, value.type, `key${value.width}`, size))}
             </div>
         </div>
     )
