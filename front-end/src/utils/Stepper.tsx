@@ -62,7 +62,7 @@ export function Stepper({size, steps}: StepperProps) {
             >
                 <Typography>{steps[activeStep].label}</Typography>
                 <IconButton
-                    sx={{marginLeft: 'auto'}}
+                    sx={{marginLeft: 'auto', color: 'white'}}
                     component="button"
                     onClick={onClickButton}
                 >

@@ -98,10 +98,6 @@ img.default {
     height: 90vw;
 }
 
-.result svg {
-    color: white;
-}
-
 /* web */
 @media only screen and (min-width: 1024px) {
     /* web css */
