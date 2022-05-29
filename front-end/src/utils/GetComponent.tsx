@@ -305,35 +305,35 @@ function GetTextArea(params: ComponentParams, key: string) {
 
 export function GetComponent(params: ComponentParams, type: number, key: string, size: string) {
     switch (type) {
-        case 1:
+        case 0:
             return GetButton(params, key);
-        case 2:
+        case 1:
             return GetCheckbox(params, true, key, size);
-        case 3:
+        case 2:
             return GetCheckbox(params, false, key, size);
-        case 4:
+        case 3:
             return GetChip(params, key);
-        case 5:
+        case 4:
             return GetDataGrid(params, key);
-        case 6:
+        case 5:
             return GetDropdown(params, key);
-        case 7:
+        case 6:
             return GetFloatingButton(params, key);
-        case 8:
+        case 7:
             return GetImage(params, key);
-        case 9:
+        case 8:
             return GetRadio(params, true, key, size);
-        case 10:
+        case 9:
             return GetRadio(params, false, key, size);
-        case 11:
+        case 10:
             return GetSlider(params, key);
-        case 12:
+        case 11:
             return GetSwitch(params, true, key);
-        case 13:
+        case 12:
             return GetSwitch(params, false, key);
-        case 14:
+        case 13:
             return GetTextField(params, key);
-        case 15:
+        case 14:
             return GetTextArea(params, key);
         default:
             return null;
