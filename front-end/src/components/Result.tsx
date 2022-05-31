@@ -11,6 +11,10 @@ const defaultSteps = [
         description: <span>Faster R-CNN's result</span>,
     },
     {
+        label: 'RetinaNet',
+        description: <span>RetinaNet's result</span>,
+    },
+    {
         label: 'TOOD',
         description:
             <span>TOOD's Result</span>,
