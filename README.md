@@ -10,6 +10,8 @@
 
 데모 영상과 같이 하나의 UI 컴포넌트로 구성된 UI 스케치의 경우 물체 검출 성능이 괜찮은 반면, 여러 개의 UI 컴포넌트로 구성된 UI 스케치는 물체 검출 성능이 나쁜 편입니다. Wireframe은 여러 개의 UI 컴포넌트로 구성되므로, 현재 성능으로서는 정상적인 작동이 불가하여 추가 학습 또는 데이터셋 추가 등의 성능 개선의 노력이 필요합니다. 
 
+=> 이번 여름, 딥러닝 공부 후 성능 개선할 예정 
+
 **README.md**
 
 [`back-end README.md 바로가기`](https://github.com/sieukim/sketch-to-wireframe/blob/main/back-end/README.md)
